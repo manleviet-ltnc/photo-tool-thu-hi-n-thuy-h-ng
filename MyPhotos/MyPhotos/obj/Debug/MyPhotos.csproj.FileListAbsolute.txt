@@ -1,0 +1,10 @@
+C:\Users\PC\Documents\GitHub\contactsapp\ContactsApp\photo-tool-thu-hi-n-thuy-h-ng\MyPhotos\MyPhotos\bin\Debug\MyPhotos.exe.config
+C:\Users\PC\Documents\GitHub\contactsapp\ContactsApp\photo-tool-thu-hi-n-thuy-h-ng\MyPhotos\MyPhotos\bin\Debug\MyPhotos.exe
+C:\Users\PC\Documents\GitHub\contactsapp\ContactsApp\photo-tool-thu-hi-n-thuy-h-ng\MyPhotos\MyPhotos\bin\Debug\MyPhotos.pdb
+C:\Users\PC\Documents\GitHub\contactsapp\ContactsApp\photo-tool-thu-hi-n-thuy-h-ng\MyPhotos\MyPhotos\obj\Debug\MyPhotos.csprojResolveAssemblyReference.cache
+C:\Users\PC\Documents\GitHub\contactsapp\ContactsApp\photo-tool-thu-hi-n-thuy-h-ng\MyPhotos\MyPhotos\obj\Debug\MyPhotos.Properties.Resources.resources
+C:\Users\PC\Documents\GitHub\contactsapp\ContactsApp\photo-tool-thu-hi-n-thuy-h-ng\MyPhotos\MyPhotos\obj\Debug\MyPhotos.csproj.GenerateResource.Cache
+C:\Users\PC\Documents\GitHub\contactsapp\ContactsApp\photo-tool-thu-hi-n-thuy-h-ng\MyPhotos\MyPhotos\obj\Debug\MyPhotos.csproj.CoreCompileInputs.cache
+C:\Users\PC\Documents\GitHub\contactsapp\ContactsApp\photo-tool-thu-hi-n-thuy-h-ng\MyPhotos\MyPhotos\obj\Debug\MyPhotos.exe
+C:\Users\PC\Documents\GitHub\contactsapp\ContactsApp\photo-tool-thu-hi-n-thuy-h-ng\MyPhotos\MyPhotos\obj\Debug\MyPhotos.pdb
+C:\Users\PC\Documents\GitHub\contactsapp\ContactsApp\photo-tool-thu-hi-n-thuy-h-ng\MyPhotos\MyPhotos\obj\Debug\MyPhotos.MainForm.resources
