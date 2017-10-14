@@ -1,0 +1,6 @@
+C:\Users\PC\Documents\GitHub\contactsapp\ContactsApp\photo-tool-thu-hi-n-thuy-h-ng\MyPhotos\MyPhotoAlbum\obj\Debug\MyPhotoAlbum.csprojResolveAssemblyReference.cache
+C:\Users\PC\Documents\GitHub\contactsapp\ContactsApp\photo-tool-thu-hi-n-thuy-h-ng\MyPhotos\MyPhotoAlbum\obj\Debug\MyPhotoAlbum.csproj.CoreCompileInputs.cache
+C:\Users\PC\Documents\GitHub\contactsapp\ContactsApp\photo-tool-thu-hi-n-thuy-h-ng\MyPhotos\MyPhotoAlbum\bin\Debug\MyPhotoAlbum.dll
+C:\Users\PC\Documents\GitHub\contactsapp\ContactsApp\photo-tool-thu-hi-n-thuy-h-ng\MyPhotos\MyPhotoAlbum\bin\Debug\MyPhotoAlbum.pdb
+C:\Users\PC\Documents\GitHub\contactsapp\ContactsApp\photo-tool-thu-hi-n-thuy-h-ng\MyPhotos\MyPhotoAlbum\obj\Debug\MyPhotoAlbum.dll
+C:\Users\PC\Documents\GitHub\contactsapp\ContactsApp\photo-tool-thu-hi-n-thuy-h-ng\MyPhotos\MyPhotoAlbum\obj\Debug\MyPhotoAlbum.pdb

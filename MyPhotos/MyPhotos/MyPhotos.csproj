@@ -78,5 +78,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyPhotoAlbum\MyPhotoAlbum.csproj">
+      <Project>{745c9c67-79d1-40d8-b606-c149692baed0}</Project>
+      <Name>MyPhotoAlbum</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
