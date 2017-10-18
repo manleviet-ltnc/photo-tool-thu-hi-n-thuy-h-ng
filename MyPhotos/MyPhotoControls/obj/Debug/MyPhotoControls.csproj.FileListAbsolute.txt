@@ -1,0 +1,12 @@
+C:\Users\PC\Documents\GitHub\contactsapp\ContactsApp\photo-tool-thu-hi-n-thuy-h-ng\MyPhotos\MyPhotoControls\obj\Debug\MyPhotoControls.csprojResolveAssemblyReference.cache
+C:\Users\PC\Documents\GitHub\contactsapp\ContactsApp\photo-tool-thu-hi-n-thuy-h-ng\MyPhotos\MyPhotoControls\obj\Debug\Manning.MyPhotoControls.PixelDialog.resources
+C:\Users\PC\Documents\GitHub\contactsapp\ContactsApp\photo-tool-thu-hi-n-thuy-h-ng\MyPhotos\MyPhotoControls\obj\Debug\MyPhotoControls.csproj.GenerateResource.Cache
+C:\Users\PC\Documents\GitHub\contactsapp\ContactsApp\photo-tool-thu-hi-n-thuy-h-ng\MyPhotos\MyPhotoControls\obj\Debug\MyPhotoControls.csproj.CoreCompileInputs.cache
+C:\Users\PC\Documents\GitHub\contactsapp\ContactsApp\photo-tool-thu-hi-n-thuy-h-ng\MyPhotos\MyPhotoControls\bin\Debug\MyPhotoControls.dll
+C:\Users\PC\Documents\GitHub\contactsapp\ContactsApp\photo-tool-thu-hi-n-thuy-h-ng\MyPhotos\MyPhotoControls\bin\Debug\MyPhotoControls.pdb
+C:\Users\PC\Documents\GitHub\contactsapp\ContactsApp\photo-tool-thu-hi-n-thuy-h-ng\MyPhotos\MyPhotoControls\bin\Debug\MyPhotoAlbum.dll
+C:\Users\PC\Documents\GitHub\contactsapp\ContactsApp\photo-tool-thu-hi-n-thuy-h-ng\MyPhotos\MyPhotoControls\bin\Debug\MyPhotoAlbum.pdb
+C:\Users\PC\Documents\GitHub\contactsapp\ContactsApp\photo-tool-thu-hi-n-thuy-h-ng\MyPhotos\MyPhotoControls\obj\Debug\MyPhotoControls.dll
+C:\Users\PC\Documents\GitHub\contactsapp\ContactsApp\photo-tool-thu-hi-n-thuy-h-ng\MyPhotos\MyPhotoControls\obj\Debug\MyPhotoControls.pdb
+C:\Users\PC\Documents\GitHub\contactsapp\ContactsApp\photo-tool-thu-hi-n-thuy-h-ng\MyPhotos\MyPhotoControls\obj\Debug\Manning.MyPhotoControls.BaseEditDialog.resources
+C:\Users\PC\Documents\GitHub\contactsapp\ContactsApp\photo-tool-thu-hi-n-thuy-h-ng\MyPhotos\MyPhotoControls\obj\Debug\Manning.MyPhotoControls.PhotoEditDialog.resources
