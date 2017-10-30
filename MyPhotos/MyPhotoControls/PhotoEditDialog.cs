@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Mainning.MyPhotoAlbum;
+using System.Collections.Specialized;
 
 namespace Manning.MyPhotoControls
 {
@@ -31,9 +32,9 @@ namespace Manning.MyPhotoControls
         public PhotoEditDialog(Photograph photo) : this()
         {
             if (photo == null)
-                throw new ArgumentNullException("Thr photo parameter cannot be null");
+                throw new ArgumentNullException("The photo parameter cannot be null");
 
-            InitialzeDialog(photo);
+            InitializeDialog(photo);
         }
 
         public PhotoEditDialog(AlbumManager mgr) : this()
@@ -42,11 +43,10 @@ namespace Manning.MyPhotoControls
                 throw new ArgumentNullException("The mgr parameter cannot be null");
 
             _manager = mgr;
-            InitialzeDialog(mgr.Current);
+            InitializeDialog(mgr.Current);
         }
 
-
-        private void InitialzeDialog(Photograph photo)
+        private void InitializeDialog(Photograph photo)
         {
             _photo = photo;
             ResetDialog();
@@ -55,13 +55,27 @@ namespace Manning.MyPhotoControls
 
         protected override void ResetDialog()
         {
+            // Fill combo box with photographers in album
+            cmbPhotographer.BeginUpdate();
+            cmbPhotographer.Items.Clear();
+
+            if (Manager != null)
+            {
+                StringCollection coll = Manager.Photographers;
+                foreach (string s in coll)
+                    cmbPhotographer.Items.Add(s);
+            }
+            else
+                cmbPhotographer.Items.Add(Photo.Photographer);
+
+            cmbPhotographer.EndUpdate();
             Photograph photo = Photo;
             if (photo != null)
             {
                 txtPhotoFile.Text = photo.FileName;
                 txtCaption.Text = photo.Caption;
                 mskDateTaken.Text = photo.DateTaken.ToString();
-                txtPhotographer.Text = photo.Photographer;
+                cmbPhotographer.Text = photo.Photographer;
                 txtNotes.Text = photo.Notes;
             }
         }
@@ -78,7 +92,7 @@ namespace Manning.MyPhotoControls
             if (photo != null)
             {
                 photo.Caption = txtCaption.Text;
-                photo.Photographer = txtPhotographer.Text;
+                photo.Photographer = cmbPhotographer.Text;
                 photo.Notes = txtNotes.Text;
                 try
                 {
@@ -100,6 +114,7 @@ namespace Manning.MyPhotoControls
                 DateTime result = DateTime.Parse(input);
                 if (result > DateTime.Now)
                     throw new FormatException("The given date is in the future.");
+
                 return result;
             }
         }
@@ -108,14 +123,21 @@ namespace Manning.MyPhotoControls
         {
             if (!e.IsValidInput)
             {
-                DialogResult result = MessageBox.Show("The Date Taken entry is invalid or"
-                                                      + " in the future and may be ignored."
+                DialogResult result = MessageBox.Show("The Date Taken entry is invalid or "
+                                                      + "in the future and may be ignored."
                                                       + "Do you wish to correct this?",
                                                       "Photo Properties",
                                                       MessageBoxButtons.YesNo,
                                                       MessageBoxIcon.Question);
                 e.Cancel = (result == DialogResult.Yes);
             }
+        }
+
+        private void cmbPhotographer_Leave(object sender, EventArgs e)
+        {
+            string person = cmbPhotographer.Text;
+            if (!cmbPhotographer.Items.Contains(person))
+                cmbPhotographer.Items.Add(person);
         }
     }
 }

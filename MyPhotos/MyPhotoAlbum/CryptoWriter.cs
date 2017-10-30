@@ -25,7 +25,7 @@ namespace Mainning.MyPhotoAlbum
         public override void WriteLine(string value)
         {
             string encrypted = CryptoBase.ProcessText(value, true);
-            base.WriteLine(value);
+            base.WriteLine(encrypted);
         }
 
 

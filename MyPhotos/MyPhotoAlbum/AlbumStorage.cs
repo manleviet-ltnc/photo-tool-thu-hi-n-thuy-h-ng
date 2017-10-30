@@ -7,16 +7,18 @@ using System.IO;
 namespace Mainning.MyPhotoAlbum
 {
     public class AlbumStorageException: Exception
-    { 
+    {
+
         public AlbumStorageException() : base() { }
-        public AlbumStorageException(string msg) : base(msg) {  }
+        public AlbumStorageException(string msg) : base(msg) { }
         public AlbumStorageException(string msg, Exception inner) : base(msg, inner) { }
     }
+
     public class AlbumStorage
     {
         static private int CurrentVersion = 91;
 
-        static public void WriteAlbum(PhotoAlbum album,string path, string password)
+        static public void WriteAlbum(PhotoAlbum album, string path, string password)
         {
             StreamWriter sw = null;
 
@@ -47,7 +49,7 @@ namespace Mainning.MyPhotoAlbum
             }
             catch (UnauthorizedAccessException uax)
             {
-                throw new AlbumStorageException("Unable to access album" + path, uax);
+                throw new AlbumStorageException("Unable to access album " + path, uax);
             }
             finally
             {
@@ -107,7 +109,7 @@ namespace Mainning.MyPhotoAlbum
                 }
 
                 PhotoAlbum album = new PhotoAlbum();
-                switch(version)
+                switch (version)
                 {
                     case "63":
                         ReadAlbumV63(sr, album);
@@ -121,15 +123,15 @@ namespace Mainning.MyPhotoAlbum
                 }
 
                 album.HasChanged = false;
-                return album;  
+                return album;
             }
-            catch(System.Security.Cryptography.CryptographicException cex)
+            catch (System.Security.Cryptography.CryptographicException cex)
             {
-                throw new AlbumStorageException("Unable to decrypt album" + path, cex);
+                throw new AlbumStorageException("Unable to decrypt album " + path, cex);
             }
             catch (FileNotFoundException fnx)
             {
-                throw new AlbumStorageException("Unable to read album" + path, fnx);
+                throw new AlbumStorageException("Unable to read album " + path, fnx);
             }
             finally
             {
@@ -164,6 +166,7 @@ namespace Mainning.MyPhotoAlbum
             // Version 91 finishes with Version 63
             ReadAlbumV63(sr, album);
         }
+
         static private Photograph ReadPhotoV63(StreamReader sr)
         {
             string file = sr.ReadLine();
@@ -193,7 +196,7 @@ namespace Mainning.MyPhotoAlbum
             }
             catch (FileNotFoundException fnx)
             {
-                throw new AlbumStorageException("Unable to find album" + path, fnx);
+                throw new AlbumStorageException("Unable to find album " + path, fnx);
             }
         }
     }

@@ -32,7 +32,17 @@ namespace Mainning.MyPhotoAlbum
             }
         }
 
-        
+        public string GetDescriptorFormat()
+        {
+            switch (PhotoDescriptor)
+            {
+                case DescriptorOption.Caption: return "c";
+                case DescriptorOption.DakeTaken: return "d";
+                case DescriptorOption.FileName:
+                default:
+                    return "f";
+            }
+        }
 
         private bool _hasChanged = false;
         public bool HasChanged

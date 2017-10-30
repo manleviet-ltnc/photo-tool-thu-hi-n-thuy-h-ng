@@ -10,7 +10,7 @@ using System.Collections;
 namespace Manning.MyPhotoControls
 {
     [ProvideProperty("FlybyText", typeof(ToolStripMenuItem))]
-    public  class FlybyTextProvider: Component, IExtenderProvider
+    public class FlybyTextProvider : Component, IExtenderProvider
     {
         public FlybyTextProvider(IContainer container)
         {
@@ -29,7 +29,7 @@ namespace Manning.MyPhotoControls
             get { return _statusLabel; }
             set { _statusLabel = value; }
         }
-           
+
         private string _currentText = null;
         private string CurrentStatusText
         {
@@ -37,7 +37,7 @@ namespace Manning.MyPhotoControls
             set { _currentText = value; }
         }
 
-        public bool  CanExtend(object extendee)
+        public bool CanExtend(object extendee)
         {
             return (extendee is ToolStripMenuItem);
         }
@@ -47,7 +47,7 @@ namespace Manning.MyPhotoControls
             if (text == null || text.Length == 0)
             {
                 // Clear item's text, if necessary
-                if(FlybyTable.Contains(item))
+                if (FlybyTable.Contains(item))
                 {
                     FlybyTable.Remove(item);
                     item.MouseHover -= OnMouseHover;
@@ -91,7 +91,7 @@ namespace Manning.MyPhotoControls
 
         private void OnMouseHover(object sender, EventArgs e)
         {
-            // Display flyby text on hover if asigned
+            // Display flyby text on hover if assigned
             ShowFlyby(sender);
         }
 

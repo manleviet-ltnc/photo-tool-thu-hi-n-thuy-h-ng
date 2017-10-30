@@ -43,7 +43,6 @@ namespace Manning.MyPhotoControls
                 DialogResult = btn.DialogResult;
                 Close();
             }
-
         }
     }
 }

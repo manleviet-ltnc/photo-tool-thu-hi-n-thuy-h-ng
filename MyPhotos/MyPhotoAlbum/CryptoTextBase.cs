@@ -7,6 +7,7 @@ using System.IO;
 using System.Security.Cryptography;
 
 
+
 namespace Mainning.MyPhotoAlbum
 {
     class CryptoTextBase
@@ -28,7 +29,7 @@ namespace Mainning.MyPhotoAlbum
         {
             get { return _cs; }
             set { _cs = value; }
-        } 
+        }
 
         public CryptoTextBase(string password)
         {
@@ -52,9 +53,9 @@ namespace Mainning.MyPhotoAlbum
             PasswordDeriveBytes pdb = new PasswordDeriveBytes(Password, SaltBytes);
             alg.Key = pdb.GetBytes(alg.KeySize / 8);
             alg.IV = pdb.GetBytes(alg.BlockSize / 8);
-            ICryptoTransform transform = encrypt ? alg.CreateDecryptor() : alg.CreateDecryptor();
+            ICryptoTransform transform = encrypt ? alg.CreateEncryptor() : alg.CreateDecryptor();
 
-            // Ctreate cryptographic stream
+            // Create cryptographic stream
             CStream = new CryptoStream(MStream, transform, CryptoStreamMode.Write);
 
             // Encrypt data and flush result to buffer
@@ -66,8 +67,6 @@ namespace Mainning.MyPhotoAlbum
 
             // Convert result to a string
             return encrypt ? Convert.ToBase64String(result) : Encoding.UTF8.GetString(result);
-
         }
-             
     }
 }

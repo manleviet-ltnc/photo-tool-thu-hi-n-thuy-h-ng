@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.IO;
+using System.Collections.Specialized;
 
 namespace Mainning.MyPhotoAlbum
 {
@@ -22,13 +23,39 @@ namespace Mainning.MyPhotoAlbum
         {
             get { return _pwd; }
             set
-            { _pwd = value; }
-            
+            {
+                _pwd = value;
+            }
         }
 
+        private StringCollection _photographers = null;
+        public StringCollection Photographers
+        {
+            get
+            {
+                if (Album.HasChanged || _photographers == null)
+                {
+                    _photographers = new StringCollection();
+                    foreach (Photograph p in Album)
+                    {
+                        // Make sure we add each person only once
+                        string person = p.Photographer;
+                        if (person != null && person.Length > 0
+                            && _photographers.Contains(person))
+                            _photographers.Add(person);
+                    }
+                }
+                return _photographers;
+            }
+        }
         static AlbumManager()
         {
             _defaultPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + @"\Albums";
+        }
+
+        public AlbumManager()
+        {
+            _album = new PhotoAlbum();
         }
 
         public AlbumManager(string name) : this()
@@ -47,6 +74,7 @@ namespace Mainning.MyPhotoAlbum
             if (Album.Count > 0)
                 Index = 0;
         }
+
         private int _pos = -1;
         public int Index
         {
@@ -64,6 +92,7 @@ namespace Mainning.MyPhotoAlbum
                 _pos = value;
             }
         }
+
         private string _name = String.Empty;
         public string FullName
         {
@@ -88,11 +117,8 @@ namespace Mainning.MyPhotoAlbum
             get { return _album; }
         }
 
-        public AlbumManager()
-        {
-            _album = new PhotoAlbum();
-        }
-        
+
+
         public Photograph Current
         {
             get
@@ -128,7 +154,7 @@ namespace Mainning.MyPhotoAlbum
         public void Save(string name, bool overwrite)
         {
             if (name == null)
-                throw new ArgumentException("name");
+                throw new ArgumentNullException("name");
             if (name != FullName && AlbumExits(name) && !overwrite)
                 throw new ArgumentException("An album with this name exists");
 
@@ -152,6 +178,28 @@ namespace Mainning.MyPhotoAlbum
 
             Index--;
             return true;
+        }
+
+        public void MoveItemBackward( int index)
+        {
+            if (index <= 0 || index >= Album.Count)
+                throw new IndexOutOfRangeException();
+
+            // Remove photo and reinsert at prior position
+            Photograph photo = Album[index];
+            Album.RemoveAt(index);
+            Album.Insert(index - 1, photo);
+        }
+
+        public void MoveItemsForward(int index)
+        {
+            if (index < 0 || index > Album.Count - 1)
+                throw new IndexOutOfRangeException();
+
+            // Remove photo and reinsert at subsequent position
+            Photograph photo = Album[index];
+            Album.RemoveAt(index);
+            Album.Insert(index + 1, photo);
         }
     }
 }

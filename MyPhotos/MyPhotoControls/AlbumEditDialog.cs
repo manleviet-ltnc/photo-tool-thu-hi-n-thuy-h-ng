@@ -20,7 +20,7 @@ namespace Manning.MyPhotoControls
         public AlbumEditDialog(AlbumManager mgr)
         {
             if (mgr == null)
-                throw new ArgumentException("AlbumManager canno be null");
+                throw new ArgumentException("AlbumManager cannot be null");
 
             InitializeComponent();
 
@@ -35,7 +35,7 @@ namespace Manning.MyPhotoControls
             lblConfirm.Enabled = enabled;
             txtConfirm.Enabled = enabled;
 
-            // if enabled, asign focus
+            // if enabled, assign focus
             if (enabled)
                 txtPassword.Focus();
         }
@@ -44,11 +44,11 @@ namespace Manning.MyPhotoControls
         {
             PhotoAlbum album = Manager.Album;
 
-            //Assign text boxex
+            // Assign text boxes
             txtAlbumFile.Text = Manager.FullName;
             txtTitle.Text = album.Title;
 
-            //Assign radio button
+            // Assign radio button
             switch (album.PhotoDescriptor)
             {
                 case PhotoAlbum.DescriptorOption.Caption:
@@ -72,7 +72,8 @@ namespace Manning.MyPhotoControls
         private bool ValidPassword()
         {
             if (cbxPassword.Checked)
-                return (txtPassword.TextLength > 0 && txtConfirm.Text == txtPassword.Text);
+                return (txtPassword.TextLength > 0 &&
+                        txtConfirm.Text == txtPassword.Text);
             else
                 return true;
         }
@@ -81,14 +82,18 @@ namespace Manning.MyPhotoControls
         {
             if (DialogResult == DialogResult.OK)
             {
-                if ( !ValidPassword())
+                if (!ValidPassword())
                 {
-                    DialogResult result = MessageBox.Show("The curent password is blank"
+                    DialogResult result = MessageBox.Show("The current password is blank "
                                                           + "or the two password entries "
-                                                          + "do not match.", "Invalid Password",
-                                                          MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                          + "do not match.",
+                                                          "Invalid Password",
+                                                          MessageBoxButtons.OK,
+                                                          MessageBoxIcon.Information);
+
                     e.Cancel = true;
                 }
+
                 if (!e.Cancel)
                     SaveSettings();
             }
@@ -125,7 +130,7 @@ namespace Manning.MyPhotoControls
             if (txtPassword.TextLength > 0)
                 errorProvider1.SetError(txtPassword, "");
             else
-                errorProvider1.SetError(txtPassword, " The assigned password cannot be blank");
+                errorProvider1.SetError(txtPassword, "The assigned password cannot be blank");
         }
 
         private void txtConfirm_Validating(object sender, CancelEventArgs e)

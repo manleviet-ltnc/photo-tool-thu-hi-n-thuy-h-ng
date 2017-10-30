@@ -11,7 +11,7 @@ namespace Mainning.MyPhotoAlbum
     /// The photograph class represents a photographic
     /// image stored in a file system
     /// </summary>
-   public class Photograph : IDisposable
+   public class Photograph : IDisposable, IFormattable
     {
         private string _fileName;
         public string FileName
@@ -118,6 +118,37 @@ namespace Mainning.MyPhotoAlbum
             return FileName;
         }
 
+        public string ToString(string format, IFormatProvider formatProvider)
+        {
+            if (string.IsNullOrEmpty(format))
+                format = "f";
+
+            char first = format.ToLower()[0];
+            if (format.Length == 1)
+            {
+                switch (first)
+                {
+                    case 'c': return Caption;
+                    case 'd': return DateTaken.ToShortDateString();
+                    case 'f': return FileName;
+                }
+            }
+            else if (first == 'd')
+                return DateTaken.ToString(format.Substring(1), formatProvider);
+
+            throw new NotImplementedException();
+        }
+
+        public string ToString(string format)
+        {
+            return ToString(format, null);
+        }
+
+        public string ToString(IFormatProvider fp)
+        {
+            return ToString(null, fp);
+        }
+
         public void ReleaseImage()
         {
             if (_bitmap != null)
@@ -131,5 +162,7 @@ namespace Mainning.MyPhotoAlbum
         {
             ReleaseImage();
         }
+
+       
     }
 }
