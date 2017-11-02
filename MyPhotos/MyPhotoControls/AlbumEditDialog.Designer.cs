@@ -109,6 +109,7 @@
             // rbtnDateTaken
             // 
             this.rbtnDateTaken.AutoSize = true;
+            this.rbtnDateTaken.Enabled = false;
             this.rbtnDateTaken.Location = new System.Drawing.Point(160, 16);
             this.rbtnDateTaken.Name = "rbtnDateTaken";
             this.rbtnDateTaken.Size = new System.Drawing.Size(82, 17);

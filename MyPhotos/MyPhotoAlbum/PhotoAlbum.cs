@@ -39,7 +39,7 @@ namespace Mainning.MyPhotoAlbum
                 case DescriptorOption.Caption: return "c";
                 case DescriptorOption.DakeTaken: return "d";
                 case DescriptorOption.FileName:
-                default:
+                default: 
                     return "f";
             }
         }

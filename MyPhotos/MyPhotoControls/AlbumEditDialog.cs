@@ -140,5 +140,6 @@ namespace Manning.MyPhotoControls
             else
                 errorProvider1.SetError(txtConfirm, "The password and confirmation entries do not match");
         }
+
     }
 }
